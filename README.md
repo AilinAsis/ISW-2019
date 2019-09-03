@@ -4,18 +4,32 @@
 
 ```
 ISW-2019
-    ├── 01 Filminas
-    │   ├── FC-01-Introducción a Cursada.pdf
-    │   ├── FC-02-Ing de Software.pdf
-    │   └── FC-03-Componentes de Proy de Software.pdf
-    ├── 03 Documentos de Catedra
-    │   ├── Bibliografía-2019.pdf
-    │   └── MOD-ACAD-ISW-2019.pdf
-    ├── 04 Guias de trabajos
-    │   ├── GT-Ejercicios Resueltos.pdf
-    │   ├── GT-Enunciados De Trabajos Prácticos evaluables.pdf
-    │   └── GT-Lineamientos para trabajos teóricos.pdf
-    └── README.md
+├── 01 Filminas
+│   ├── FC-01-Introducción a Cursada.pdf
+│   ├── FC-02-Ing de Software.pdf
+│   ├── FC-03-Componentes de Proy de Software.pdf
+│   ├── FC-04-Lean Agile.pdf
+│   ├── FC-05-User Stories.pdf
+│   └── FC-06-SCM.pdf
+├── 02 Trabajos evaluables
+│   └── Trabajos conceptuales
+│       └── TC-01-Integración continua.pdf
+├── 03 Documentos de Catedra
+│   ├── Bibliografía-2019.pdf
+│   └── MOD-ACAD-ISW-2019.pdf
+├── 04 Guias de trabajos
+│   ├── GT-Ejercicios Resueltos.pdf
+│   ├── GT-Enunciados De Trabajos Prácticos evaluables.pdf
+│   └── GT-Lineamientos para trabajos teóricos.pdf
+├── 05 Material de Clase
+│   ├── MC-01-Cartas de Poker Estimations-Practico.pdf
+│   └── MC-02-Dinamicas de Scrum-Practico.pdf
+├── 06 Notas
+│   └── NC-20190830-Gestión de Configuración-Teorica.docx
+├── 07 Resúmenes
+│   ├── R-Desconocido-2019.docx.docx
+│   └── R-Gonzalo Martinez-2019.docx.docx
+└── README.md
 ```
 
 ## Listado de Ítems de Configuración
