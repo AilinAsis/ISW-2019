@@ -2,6 +2,7 @@
 
 ## Estructura del repositorio
 
+```
 ISW-2019
     ├── 01 Filminas
     │   ├── FC-01-Introducción a Cursada.pdf
@@ -15,6 +16,7 @@ ISW-2019
     │   ├── GT-Enunciados De Trabajos Prácticos evaluables.pdf
     │   └── GT-Lineamientos para trabajos teóricos.pdf
     └── README.md
+```
 
 ## Listado de Ítems de Configuración
 
