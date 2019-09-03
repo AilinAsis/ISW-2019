@@ -2,6 +2,20 @@
 
 ## Estructura del repositorio
 
+ISW-2019
+    ├── 01 Filminas
+    │   ├── FC-01-Introducción a Cursada.pdf
+    │   ├── FC-02-Ing de Software.pdf
+    │   └── FC-03-Componentes de Proy de Software.pdf
+    ├── 03 Documentos de Catedra
+    │   ├── Bibliografía-2019.pdf
+    │   └── MOD-ACAD-ISW-2019.pdf
+    ├── 04 Guias de trabajos
+    │   ├── GT-Ejercicios Resueltos.pdf
+    │   ├── GT-Enunciados De Trabajos Prácticos evaluables.pdf
+    │   └── GT-Lineamientos para trabajos teóricos.pdf
+    └── README.md
+
 ## Listado de Ítems de Configuración
 
 | Nombre                         | Regla de nombrado                            | Ubicación física                              |
