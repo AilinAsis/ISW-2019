@@ -7,27 +7,87 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pedir lo que sea</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="misCSS/General.css" rel="stylesheet" />
 </head>
 
 <body>
-    <div class="container">
+
+    <div id="barraAtras" class="container-fluid">
+        <span><</span>
+    </div> 
+
+    <div id="titulo" class="container-fluid">
         <h1>Pedir lo que sea</h1>
+    </div>
+     
+    <div id="formUno"  class="container">
+        <div>
+            <p>Si cabe en nuestra maleta te lo llevamos</p>
+        </div>
+
+
+
+
+        <div id="dondeLoConseguimos">
+
+            <div>
+                <p>¿Donde lo conseguimos?</p>
+            </div>
+
+            <div>
+                <input class="container-fluid" type="text" name="" id="" placeholder="Calle">
+            </div>
+
+            <div>
+                <input class="container-fluid" type="number" name="" id="" placeholder="Numero">
+            </div>
+
+            <div>
+                <select class="container-fluid comboBox" name="" id="ciudad">
+                    <option value="">Cordoba</option>
+                    <option value="">Almafuerte</option>
+                    <option value="">Berrotaran</option>
+                </select>
+            </div>
+
+        </div>
+
+        
+
+
+
+
+        <div id="queProducto">
+
+            <div>
+                <p>¿Que producto deseas?</p>
+            </div>
+
+            <div>
+                <textarea class="container-fluid" placeholder="Describe el producto que debemos conseguir"></textarea>
+                <label>Agregar Foto</label>
+                <input type="file" name="" id="">
+            </div>
+
+        </div>
+
+        <div>
+            <button class="container-fluid btnSig"><div style="margin:10px" >SIGUIENTE</div></button>
+        </div>
+
+
+        <div>
+           
+            
+        </div>
         <form>
-            <label for="">item a buscar</label>
-            <input type="text" name="" id="">
-            <label for="">Foto</label>
-            <input type="file" name="" id="">
+
+            <div id="GoogleMaps">
+                <p style="margin-top:20px">Tambien podes buscarte por Google Maps! <span>(Aqui)</span></p>
+            </div>
+            
             <h1>Origen</h1>
-            <label for="">Calle</label>
-            <input type="text" name="" id="">
-            <label for="">Numero</label>
-            <input type="number" name="" id="">
-            <label for="">Ciudad</label>
-            <select name="" id="">
-                <option value="">Cordoba</option>
-                <option value="">Almafuerte</option>
-                <option value="">Berrotaran</option>
-            </select>
+            
             <label for="">Referencia</label>
             <input type="text" name="" id="">
             <h1>Destino</h1>

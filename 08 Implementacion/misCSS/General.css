@@ -1,3 +1,69 @@
 ﻿body {
-    background-color:#00796B;
+    background-color:#e5e4e4;
+}
+
+input {
+    background-color:#ffffff;
+    border-radius:5px;
+}
+
+#barraAtras
+{
+    margin:10px;
+}
+
+#titulo
+{
+    margin:10px;
+}
+
+#formUno
+{
+    margin:5px;
+}
+
+div
+{
+    margin:2px;
+}
+
+#ciudad
+{
+    margin-top:5px;
+}
+
+#GoogleMaps
+{
+    background-color:#cbcbcb;
+    color:grey;
+}
+
+#dondeLoConseguimos
+{
+    margin-top:20px;
+    margin-bottom:30px;
+
+}
+
+#queProducto
+{
+    margin-top:20px;
+    margin-bottom:30px;
+}
+
+.btnSig
+{
+    background-color:#FFC107;
+    border-radius:7px;
+}
+
+.comboBox
+{
+    background-color:#ffffff;
+    border-radius:3px;
+}
+
+p
+{
+   color:grey;
 }
