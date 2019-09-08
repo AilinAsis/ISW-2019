@@ -11,83 +11,65 @@
 </head>
 
 <body>
+    <div class="container">
 
-    <div id="barraAtras" class="container-fluid">
-        <span><</span>
-    </div> 
+        <div id="barraAtras">
+            <span></span>
+        </div>
 
-    <div id="titulo" class="container-fluid">
         <h1>Pedir lo que sea</h1>
-    </div>
-     
-    <div id="formUno"  class="container">
-        <div>
-            <p>Si cabe en nuestra maleta te lo llevamos</p>
-        </div>
 
+        <p>Si cabe en nuestra maleta te lo llevamos</p>
 
-
-
-        <div id="dondeLoConseguimos">
-
-            <div>
-                <p>¿Donde lo conseguimos?</p>
-            </div>
-
-            <div>
-                <input class="container-fluid" type="text" name="" id="" placeholder="Calle">
-            </div>
-
-            <div>
-                <input class="container-fluid" type="number" name="" id="" placeholder="Numero">
-            </div>
-
-            <div>
-                <select class="container-fluid comboBox" name="" id="ciudad">
-                    <option value="">Cordoba</option>
-                    <option value="">Almafuerte</option>
-                    <option value="">Berrotaran</option>
-                </select>
-            </div>
-
-        </div>
-
-        
-
-
-
-
-        <div id="queProducto">
-
-            <div>
-                <p>¿Que producto deseas?</p>
-            </div>
-
-            <div>
-                <textarea class="container-fluid" placeholder="Describe el producto que debemos conseguir"></textarea>
-                <label>Agregar Foto</label>
-                <input type="file" name="" id="">
-            </div>
-
-        </div>
-
-        <div>
-            <button class="container-fluid btnSig"><div style="margin:10px" >SIGUIENTE</div></button>
-        </div>
-
-
-        <div>
-           
-            
-        </div>
         <form>
+
+            <div id="dondeLoConseguimos">
+
+                <h4>¿Donde lo conseguimos?</h4>
+
+                <div>
+                    <input class="form-control" type="text" name="" id="" placeholder="Calle">
+                </div>
+
+                <div>
+                    <input class="form-control" type="number" name="" id="" placeholder="Numero">
+                </div>
+
+                <div>
+                    <select class="form-control comboBox" name="" id="ciudad">
+                        <option value="">Cordoba</option>
+                        <option value="">Almafuerte</option>
+                        <option value="">Berrotaran</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="queProducto">
+
+                <h4>¿Que producto deseas?</h4>
+
+                <textarea class="form-control" placeholder="Describe el producto que debemos conseguir"></textarea>
+
+                <div class="form-group">
+                    <label>Agregar Foto</label>
+                    <input type="file" name="" id="">
+                </div>
+
+            </div>
+
+            <div class="d-flex">
+                <button class="btnSig flex-fill p-2">
+                    SIGUIENTE
+                </button>
+            </div>
+
 
             <div id="GoogleMaps">
                 <p style="margin-top:20px">Tambien podes buscarte por Google Maps! <span>(Aqui)</span></p>
             </div>
-            
+
             <h1>Origen</h1>
-            
+
             <label for="">Referencia</label>
             <input type="text" name="" id="">
             <h1>Destino</h1>
@@ -116,6 +98,7 @@
             <input type="number" name="" id="">
             <label for="">Cuando recibirlo?</label>
 
+
         </form>
     </div>
 
@@ -124,3 +107,5 @@
 </body>
 
 </html>
+
+<!-- Interfaz v1.1 -->
