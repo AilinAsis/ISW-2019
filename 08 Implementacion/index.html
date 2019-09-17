@@ -13,36 +13,22 @@
 <body>
     <div class="container" ng-controller="appCtrl">
 
-        <div id="barraAtras">
-            <span></span>
-        </div>
-
         <h1>Pedir lo que sea</h1>
-
         <p>Si cabe en nuestra maleta te lo llevamos</p>
 
+        <hr>
+
         <form>
-
-
-            <div id="queProducto">
-
-                <h4>¿Que producto deseas?</h4>
+            <div>
+                <h4>¿Qué producto deseas?</h4>
 
                 <textarea class="form-control" placeholder="Describe el producto que debemos conseguir"></textarea>
 
                 <div class="form-group">
                     <label>Agregar Foto</label>
-                    <input type="file" name="" id="inputImagen">
+                    <input type="file" class="form-control-file" id="inputImagen">
                 </div>
-
             </div>
-
-            <div class="d-flex">
-                <button class="btnSig flex-fill p-2">
-                    SIGUIENTE
-                </button>
-            </div>
-
 
             <!-- <div id="GoogleMaps">
                 <p style="margin-top:20px">Tambien podes buscarte por Google Maps! </p>
@@ -64,76 +50,101 @@
                 </div>
             </div> -->
 
+            <hr>
+
             <div id="dondeLoConseguimos">
 
-                <h4>¿Donde lo conseguimos?</h4>
+                <h4>¿Dónde lo conseguimos?</h4>
 
-                <div>
-                    <input class="form-control" type="text" name="" id="" placeholder="Calle">
+                <div class="form-row">
+                    <div class="col-8">
+                        <input class="form-control" type="text" placeholder="Calle">
+                    </div>
+                    <div class="col">
+                        <input class="form-control" type="text" placeholder="Numero">
+                    </div>
                 </div>
 
                 <div>
-                    <input class="form-control" type="number" name="" id="" placeholder="Numero">
-                </div>
-
-                <div>
-                    <select class="form-control comboBox" name="" id="ciudad">
-                        <option value="">Cordoba</option>
-                        <option value="">Almafuerte</option>
-                        <option value="">Berrotaran</option>
+                    <select class="form-control comboBox">
+                        <option>Cordoba</option>
+                        <option>Almafuerte</option>
+                        <option>Berrotaran</option>
                     </select>
                 </div>
-                <label for="">Referencia</label>
-                <input type="text" name="" id="">
+
+                <div>
+                    <input class="form-control" type="text" name="" id="" placeholder="Referencias">
+                </div>
             </div>
 
+            <hr>
 
-            <h4>¿Donde lo llevamos?</h4>
+            <h4>¿Dónde lo llevamos?</h4>
 
-            <div>
-                <input class="form-control" type="text" name="" id="" placeholder="Calle">
+            <div class="form-row">
+                <div class="col-8">
+                    <input class="form-control" type="text" placeholder="Calle">
+                </div>
+                <div class="col">
+                    <input class="form-control" type="text" placeholder="Numero">
+                </div>
             </div>
 
             <div>
-                <input class="form-control" type="number" name="" id="" placeholder="Numero">
-            </div>
-
-            <div>
-                <select class="form-control comboBox" name="" id="ciudad">
+                <select class="form-control comboBox">
                     <option value="">Cordoba</option>
                     <option value="">Almafuerte</option>
                     <option value="">Berrotaran</option>
                 </select>
             </div>
-            <label for="">Referencia</label>
-            <input type="text" name="" id="">
 
+            <div>
+                <input class="form-control" type="text" placeholder="Referencias">
+            </div>
+
+            <hr>
 
             <h4>Forma de pago</h4>
-            <div class="d-flex">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="" id="radioEfectivo" value="">
+            <div class="form-check form-check-inline">
+                <div class="form-check" ng-click="setRadioEfectivo()">
+                    <input class="form-check-input" type="radio" ng-checked="radioEfectivo">
                     <label class="form-check-label" for="">
                         Efectivo
                     </label>
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="" id="radioTarjeta" value="">
+
+                <div class="form-check" ng-click="setRadioTarjeta()">
+                    <input class="form-check-input" type="radio" ng-checked="radioTarjeta">
                     <label class="form-check-label" for="">
-                        Tarjeta
+                        Tarjeta VISA
                     </label>
                 </div>
             </div>
 
-            <div id="pagarConEfectivo"></div>
+            <div ng-show="estadoFormaPago === 'E'">
+                <input type="text" class="form-control" placeholder="Monto a pagar">
+            </div>
 
-            <div id="pagarConTarjeta">
-                <label for="">Numero tarjeta</label>
-                <input type="text" name="" id="">
-                <label for="">Nombre y apellido titular</label>
-                <input type="text" name="" id="">
-                <label for="">CVC</label>
-                <input type="number" name="" id="">
+            <div class="form-row" ng-show="estadoFormaPago === 'T'">
+                <div class="col-8">
+                    <input type="text" class="form-control" placeholder="Número de tarjeta">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="CVC">
+                </div>
+            </div>
+
+            <div>
+                <input type="text" class="form-control" placeholder="Nombre y apellido titular">
+            </div>
+
+            <hr>
+
+            <div class="d-flex">
+                <button class="btn btn-warning border border-secondary flex-fill p-2">
+                    PEDIR
+                </button>
             </div>
 
         </form>
@@ -146,4 +157,4 @@
 
 </html>
 
-<!-- Interfaz v1.1 -->
+<!-- Interfaz v1.2 -->
