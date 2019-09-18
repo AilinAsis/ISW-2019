@@ -35,4 +35,20 @@ angular.module('app', [])
             $scope.radioEfectivo = false;
             $scope.radioTarjeta = true;
         }
+
+        $scope.estadoCuandoRecibir = 'A'; // A = Lo antes posible, S = Seleccionar fecha y hora
+        $scope.radioAntesPosible = false;
+        $scope.radioSelecFechaHora = false;
+
+        $scope.setRadioAntesPosible = () => {
+            $scope.estadoCuandoRecibir = 'A';
+            $scope.radioAntesPosible = true;
+            $scope.radioSelecFechaHora = false;
+        }
+
+        $scope.setRadioSelecFechaHora = () => {
+            $scope.estadoCuandoRecibir = 'S';
+            $scope.radioAntesPosible = false;
+            $scope.radioSelecFechaHora = true;
+        }
     });
