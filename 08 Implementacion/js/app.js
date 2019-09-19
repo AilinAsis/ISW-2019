@@ -1,6 +1,5 @@
 angular.module('app', [])
     .controller('appCtrl', ($scope) => {
-        $scope.caractRest = 180;
 
         // Validaciones de la imagen
         const inputImagen = document.getElementById('inputImagen');
@@ -52,7 +51,4 @@ angular.module('app', [])
             $scope.radioAntesPosible = false;
             $scope.radioSelecFechaHora = true;
         }
-
-
-       
     });
