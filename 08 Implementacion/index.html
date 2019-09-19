@@ -11,18 +11,35 @@
 </head>
 
 <body>
-    <div class="container" ng-controller="appCtrl">
+
+    <div ng-app="myApp" novalidate class="container" ng-controller="appCtrl">
+
 
         <h1>Pedir lo que sea</h1>
-        <p>Si cabe en nuestra maleta te lo llevamos</p>
+        <p>Si entra en nuestra mochila te lo llevamos</p>
 
         <hr>
 
-        <form>
+        <form novalidate>
             <div>
+
+
+
+
                 <h4>¿Qué producto deseas?</h4>
 
-                <textarea class="form-control" placeholder="Describe el producto que debemos conseguir"></textarea>
+                <textarea class="form-control" name="Descripcion" ng-model="Descripcion"
+                          placeholder="Describe el producto que debemos conseguir" ng-maxlength="{{caractRest}}"
+                          ng-trim="false" maxlength="{{caractRest}}"
+                          ></textarea>
+                <label  style="color:grey">
+                    Caracteres restantes <span style="color:red" name="cantCaract">{{caractRest - Descripcion.length}}</span>
+                </label>
+
+
+
+
+
 
                 <div class="form-group">
                     <label>Agregar Foto<small class="text-muted ml-3">La foto es opcional.</small></label>
@@ -31,24 +48,24 @@
             </div>
 
             <!-- <div id="GoogleMaps">
-                <p style="margin-top:20px">Tambien podes buscarte por Google Maps! </p>
+            <p style="margin-top:20px">Tambien podes buscarte por Google Maps! </p>
 
-                <div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3">
-                    <div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div>
-                    <script>(function () {
-                            var setting = { "height": 471, "width": 803, "zoom": 11, "queryString": "Córdoba, Cordoba, Argentina", "place_id": "ChIJaVuPR1-YMpQRkrBmU5pPorA", "satellite": false, "centerCoord": [-31.399466095395084, -64.194344], "cid": "0xb0a24f9a5366b092", "cityUrl": "/argentina/cordoba-18277", "id": "map-9cd199b9cc5410cd3b1ad21cab2e54d3", "embed_id": "82538" };
-                            var d = document;
-                            var s = d.createElement('script');
-                            s.src = 'https://1map.com/js/script-for-user.js?embed_id=82538';
-                            s.async = true;
-                            s.onload = function (e) {
-                                window.OneMap.initMap(setting)
-                            };
-                            var to = d.getElementsByTagName('script')[0];
-                            to.parentNode.insertBefore(s, to);
-                        })();</script><a href="https://1map.com/map-embed?embed_id=82538">1map.com</a>
-                </div>
-            </div> -->
+            <div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3">
+                <div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div>
+                <script>(function () {
+                        var setting = { "height": 471, "width": 803, "zoom": 11, "queryString": "Córdoba, Cordoba, Argentina", "place_id": "ChIJaVuPR1-YMpQRkrBmU5pPorA", "satellite": false, "centerCoord": [-31.399466095395084, -64.194344], "cid": "0xb0a24f9a5366b092", "cityUrl": "/argentina/cordoba-18277", "id": "map-9cd199b9cc5410cd3b1ad21cab2e54d3", "embed_id": "82538" };
+                        var d = document;
+                        var s = d.createElement('script');
+                        s.src = 'https://1map.com/js/script-for-user.js?embed_id=82538';
+                        s.async = true;
+                        s.onload = function (e) {
+                            window.OneMap.initMap(setting)
+                        };
+                        var to = d.getElementsByTagName('script')[0];
+                        to.parentNode.insertBefore(s, to);
+                    })();</script><a href="https://1map.com/map-embed?embed_id=82538">1map.com</a>
+            </div>
+        </div> -->
 
             <hr>
 
@@ -56,12 +73,16 @@
 
                 <h4>¿Dónde lo conseguimos?</h4>
 
+
                 <div class="form-row">
                     <div class="col-8">
-                        <input class="form-control" type="text" placeholder="Calle">
+                        <!--<input class="form-control" type="text" placeholder="Calle">-->
+                        <input class="form-control" type="text" maxlength="50" placeholder="Calle"  >
                     </div>
                     <div class="col">
-                        <input class="form-control" type="text" placeholder="Numero">
+                        <input type="number" class="form-control" maxlength="5"
+                               oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                               placeholder="Número" />
                     </div>
                 </div>
 
@@ -74,7 +95,7 @@
                 </div>
 
                 <div>
-                    <input class="form-control" type="text" name="" id="" placeholder="Referencias">
+                    <input class="form-control" type="text" name="" id="" maxlength="200" placeholder="Referencias">
                 </div>
             </div>
 
@@ -84,10 +105,12 @@
 
             <div class="form-row">
                 <div class="col-8">
-                    <input class="form-control" type="text" placeholder="Calle">
+                    <input class="form-control" type="text" maxlength="50" placeholder="Calle">
                 </div>
                 <div class="col">
-                    <input class="form-control" type="text" placeholder="Numero">
+                    <input type="number" class="form-control" maxlength="5" 
+                           oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                           placeholder="Número"/>
                 </div>
             </div>
 
@@ -100,7 +123,7 @@
             </div>
 
             <div>
-                <input class="form-control" type="text" placeholder="Referencias">
+                <input class="form-control" type="text" maxlength="200" placeholder="Referencias">
             </div>
 
             <hr>
