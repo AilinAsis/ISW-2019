@@ -67,3 +67,14 @@ p
 {
    color:grey;
 }
+
+input.ng-invalid {
+    background-color: pink;
+}
+
+
+textarea.ng-invalid {
+    background-color: pink;
+}
+
+
