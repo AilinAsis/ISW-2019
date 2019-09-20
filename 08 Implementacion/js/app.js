@@ -69,7 +69,26 @@ angular.module('app', [])
             $scope.radioSelecFechaHora = true;
         }
 
+        // Codigo del mapa.
+        const accessToken = 'pk.eyJ1Ijoic29ibzRnYW1lcyIsImEiOiJjazBzNnNlY24wYXZwM25waHc2amp2aGJ1In0.NP_7pR_qpVmjFmU-9UrE6Q';
 
+        const mymap = L.map('mapid').setView([-31.42, -64.19], 14);
 
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            id: 'mapbox.streets',
+            accessToken: accessToken
+        }).addTo(mymap);
+
+        let marker = L.marker([51.505, -0.09]).addTo(mymap);
+
+        // Eventos
+        const onMapClick = (e) => {
+            mymap.removeLayer(marker);
+            marker = L.marker(e.latlng).addTo(mymap);
+        }
+
+        mymap.on('click', onMapClick);
 
     });
