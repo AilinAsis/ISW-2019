@@ -15,8 +15,8 @@
     <div ng-app="myApp" class="container" ng-controller="appCtrl">
 
 
-        <div id="divImagen" class="form-check">
-            <img style="max-width:100%" src="comida.png" />
+        <div id="divImagen" class="d-flex">
+            <img class="flex-fill" src="comida.png" />
         </div>
 
 
@@ -33,22 +33,22 @@
                 <h4>¿Qué producto deseas?</h4>
 
                 <textarea class="form-control" name="Descripcion" ng-model="Descripcion"
-                          placeholder="Describe el producto que debemos conseguir" ng-maxlength="{{caractRest}}"
-                          ng-trim="false" maxlength="{{caractRest}}"></textarea>
-                <label style="color:grey">
-                    Caracteres restantes <span style="color:red" name="cantCaract">{{caractRest - Descripcion.length}}</span>
-                </label>
+                    placeholder="Describe el producto que debemos conseguir" ng-maxlength="{{caractRest}}"
+                    ng-trim="false" maxlength="{{caractRest}}"></textarea>
+                <small style="color:grey">
+                    Caracteres restantes <span style="color:red"
+                        name="cantCaract">{{caractRest - Descripcion.length}}</span>
+                </small>
 
-
-
-
-
-
-                <div class="form-group">
-                    <label>Agregar Foto<small class="text-muted ml-3">La foto es opcional.</small></label>
+                <div class="form-group mt-3">
+                    <label>Agregar Foto<small class="text-muted ml-3">*La foto es opcional.</small></label>
                     <input type="file" class="form-control-file" id="inputImagen" />
-                    <br />
-                    <br />
+                </div>
+                <div class="text-danger" ng-show="mostrarAlertaImagen === 'E'">
+                    La extensión del archivo es incorrecta.
+                </div>
+                <div class="text-danger" ng-show="mostrarAlertaImagen === 'G'">
+                    El archivo es demasiado grande (>5MB).
                 </div>
             </div>
 
@@ -86,8 +86,8 @@
                     </div>
                     <div class="col">
                         <input type="number" class="form-control" maxlength="5"
-                               oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                               placeholder="Número" />
+                            oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                            placeholder="Número" />
                     </div>
                 </div>
 
@@ -114,8 +114,8 @@
                 </div>
                 <div class="col">
                     <input type="number" class="form-control" maxlength="5"
-                           oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                           placeholder="Número" />
+                        oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                        placeholder="Número" />
                 </div>
             </div>
 
