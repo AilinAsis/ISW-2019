@@ -12,27 +12,30 @@
 
 <body>
 
-    <div ng-app="myApp" novalidate class="container" ng-controller="appCtrl">
+    <div ng-app="myApp" class="container" ng-controller="appCtrl">
 
 
-        <h1>Pedir lo que sea</h1>
+        <div id="divImagen" class="form-check">
+            <img style="max-width:100%" src="comida.png" />
+        </div>
+
+
+        <h1 class="text-center">Pedí lo que sea</h1>
         <p>Si entra en nuestra mochila te lo llevamos</p>
 
         <hr>
 
+
         <form novalidate>
-            <div>
 
-
-
+            <div id="divProd">
 
                 <h4>¿Qué producto deseas?</h4>
 
                 <textarea class="form-control" name="Descripcion" ng-model="Descripcion"
                           placeholder="Describe el producto que debemos conseguir" ng-maxlength="{{caractRest}}"
-                          ng-trim="false" maxlength="{{caractRest}}"
-                          ></textarea>
-                <label  style="color:grey">
+                          ng-trim="false" maxlength="{{caractRest}}"></textarea>
+                <label style="color:grey">
                     Caracteres restantes <span style="color:red" name="cantCaract">{{caractRest - Descripcion.length}}</span>
                 </label>
 
@@ -43,29 +46,31 @@
 
                 <div class="form-group">
                     <label>Agregar Foto<small class="text-muted ml-3">La foto es opcional.</small></label>
-                    <input type="file" class="form-control-file" id="inputImagen">
+                    <input type="file" class="form-control-file" id="inputImagen" />
+                    <br />
+                    <br />
                 </div>
             </div>
 
             <!-- <div id="GoogleMaps">
-            <p style="margin-top:20px">Tambien podes buscarte por Google Maps! </p>
+                <p style="margin-top:20px">Tambien podes buscarte por Google Maps! </p>
 
-            <div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3">
-                <div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div>
-                <script>(function () {
-                        var setting = { "height": 471, "width": 803, "zoom": 11, "queryString": "Córdoba, Cordoba, Argentina", "place_id": "ChIJaVuPR1-YMpQRkrBmU5pPorA", "satellite": false, "centerCoord": [-31.399466095395084, -64.194344], "cid": "0xb0a24f9a5366b092", "cityUrl": "/argentina/cordoba-18277", "id": "map-9cd199b9cc5410cd3b1ad21cab2e54d3", "embed_id": "82538" };
-                        var d = document;
-                        var s = d.createElement('script');
-                        s.src = 'https://1map.com/js/script-for-user.js?embed_id=82538';
-                        s.async = true;
-                        s.onload = function (e) {
-                            window.OneMap.initMap(setting)
-                        };
-                        var to = d.getElementsByTagName('script')[0];
-                        to.parentNode.insertBefore(s, to);
-                    })();</script><a href="https://1map.com/map-embed?embed_id=82538">1map.com</a>
-            </div>
-        </div> -->
+                <div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3">
+                    <div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div>
+                    <script>(function () {
+                            var setting = { "height": 471, "width": 803, "zoom": 11, "queryString": "Córdoba, Cordoba, Argentina", "place_id": "ChIJaVuPR1-YMpQRkrBmU5pPorA", "satellite": false, "centerCoord": [-31.399466095395084, -64.194344], "cid": "0xb0a24f9a5366b092", "cityUrl": "/argentina/cordoba-18277", "id": "map-9cd199b9cc5410cd3b1ad21cab2e54d3", "embed_id": "82538" };
+                            var d = document;
+                            var s = d.createElement('script');
+                            s.src = 'https://1map.com/js/script-for-user.js?embed_id=82538';
+                            s.async = true;
+                            s.onload = function (e) {
+                                window.OneMap.initMap(setting)
+                            };
+                            var to = d.getElementsByTagName('script')[0];
+                            to.parentNode.insertBefore(s, to);
+                        })();</script><a href="https://1map.com/map-embed?embed_id=82538">1map.com</a>
+                </div>
+            </div> -->
 
             <hr>
 
@@ -77,7 +82,7 @@
                 <div class="form-row">
                     <div class="col-8">
                         <!--<input class="form-control" type="text" placeholder="Calle">-->
-                        <input class="form-control" type="text" maxlength="50" placeholder="Calle"  >
+                        <input class="form-control" type="text" maxlength="50" placeholder="Calle">
                     </div>
                     <div class="col">
                         <input type="number" class="form-control" maxlength="5"
@@ -108,9 +113,9 @@
                     <input class="form-control" type="text" maxlength="50" placeholder="Calle">
                 </div>
                 <div class="col">
-                    <input type="number" class="form-control" maxlength="5" 
+                    <input type="number" class="form-control" maxlength="5"
                            oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                           placeholder="Número"/>
+                           placeholder="Número" />
                 </div>
             </div>
 
@@ -202,6 +207,8 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/angular.min.js"></script>
     <script src="js/app.js"></script>
+
+
 </body>
 
 </html>
