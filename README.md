@@ -34,32 +34,35 @@ ISW-2019
 
 ## Listado de Ítems de Configuración
 
-| Nombre                         | Regla de nombrado                            | Ubicación física                              |
-| ------------------------------ | ---------------------------------------------| --------------------------------------------- |
-| Filminas de clases             | FC-\<nro\>-\<tema\>.pdf                      | /01 Filminas                                  |
-| Trabajos prácticos             | TP-\<nro\>-\<tema\>.pdf                      | /02 Trabajos evaluables/Trabajos prácticos    |
-| Trabajos conceptuales          | TC-\<nro\>-\<tema\>.pdf                      | /02 Trabajos evaluables/Trabajos conceptuales |
-| Modalidad académica            | MOD-ACAD-ISW\<YYYY\>.pdf                     | /03 Documentos de la cátedra                  |
-| Guías de trabajo               | GT-\<nombre\>.pdf                            | /04 Guías de trabajos                         |
-| Material de trabajo para clase | MC-\<nro\>-\<tema\>-\<tipo\>.pdf             | /05 Material de clase                         |
-| Notas de clase                 | NC-\<YYYYMMDD\>-\<tema\>-\<tipo\>.docx       | /06 Notas                                     |
-| Resúmenes                      | R-\<autor/es\>-\<YYYY\>.\<extensión\>        | /07 Resúmenes                                 |
-| Ejercicios resueltos           | EJ-\<nro\>-\<unidad\>-\<tema\>.\<extensión\> | /08 Ejercicios resueltos                      |
-| Bibliografía                   | Bibliografia\<YYYY\>.pdf                     | /03 Documentos de la cátedra                  |
-| Plan de SCM                    | README.md                                    | /                                             |
-
+| Nombre                         | Regla de nombrado                                           | Ubicación física                              |
+| ------------------------------ | ------------------------------------------------------------|-----------------------------------------------|
+| Líneas Base                    | LB-\<nro\>-\<nombreLB\>.\<extensión\>                       | /01 Líneas Base                               |
+| Documentos de Línea Base       | DOC-\<idLíneaBase\>-\<nro\>-\<ambito\>.\<extensión\>        | /01 Líneas Base/LB-\<nro\>-\<nombreLB\>       || Filminas de clases             | FC-\<nro\>-\<tema\>.pdf                                     | /02 Filminas                                  |
+| Trabajos prácticos             | TP-\<nro\>-\<tema\>.pdf                                     | /03 Trabajos evaluables/Trabajos prácticos    |
+| Trabajos conceptuales          | TC-\<nro\>-\<tema\>.pdf                                     | /03 Trabajos evaluables/Trabajos conceptuales |
+| Modalidad académica            | MOD-ACAD-ISW\<YYYY\>.pdf                                    | /04 Documentos de la cátedra                  |
+| Guías de trabajo               | GT-\<nombreGT\>.pdf                                         | /05 Guías de trabajos                         |
+| Material de trabajo para clase | MC-\<nro\>-\<tema\>-\<tipo\>.pdf                            | /06 Material de clase                         |
+| Notas de clase                 | NC-\<YYYYMMDD\>-\<tema\>-\<tipo\>.docx                      | /07 Notas                                     |
+| Resúmenes                      | R-\<autor/es\>-\<YYYY\>.\<extensión\>                       | /08 Resúmenes                                 |
+| Ejercicios resueltos           | EJ-\<nro\>-\<unidad\>-\<tema\>.\<extensión\>                | /09 Ejercicios resueltos                      |
+| Bibliografía                   | Bibliografia\<YYYY\>.pdf                                    | /04 Documentos de la cátedra                  |
+| Plan de SCM                    | README.md                                                   | /                                             |
 
 ## Glosario
 
-| Sigla         | Significado                                                                   |
-| ------------- | ----------------------------------------------------------------------------- |
-| \<nro\>       | Número cardinal empezando en 01.                                              |
-| \<tema\>      | Breve descripción del tema central del que trata el ítem de configuración.    |
-| \<YYYY\>      | Fecha del ítem de configuración en formato numérico (Año).                    |
-| \<nombre\>    | Nombre que identifica a la Guía de Trabajos Prácticos.                        |
-| \<tipo\>      | Tipo de nota de clase. Puede ser teórica o práctica.                          |
-| \<YYYYMMDD\>  | Fecha del ítem de configuración en formato numérico (AñoMesDía).              |
-| \<extensión\> | Nombre de la extensión de un archivo identificado como ítem de configuración. |
+| Sigla           | Significado                                                                      |
+| --------------- | ---------------------------------------------------------------------------------|
+| \<nro\>         | Número cardinal empezando en 01.                                                 |
+| \<tema\>        | Breve descripción del tema central del que trata el ítem de configuración.       |
+| \<YYYY\>        | Fecha del ítem de configuración en formato numérico (Año).                       |
+| \<nombreGT\>    | Nombre que identifica a la Guía de Trabajos Prácticos.                           |
+| \<nombreLB\>    | Nombre que identifica a la Línea Base.                                           |
+| \<tipo\>        | Tipo de nota de clase. Puede ser teórica o práctica.                             |
+| \<YYYYMMDD\>    | Fecha del ítem de configuración en formato numérico (AñoMesDía).                 |
+| \<extensión\>   | Nombre de la extensión de un archivo identificado como ítem de configuración.    |
+| \<idLíneaBase\> | Sigla que indica con que línea base se corresponde cada documento de línea base. |
+| \<ambito\>      | Ámbito del documento de línea base que indica de que tipo de documento se trata. |
 
 ## Criterio para la creación de lineas base
 
