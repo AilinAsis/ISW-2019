@@ -3,32 +3,78 @@
 ## Estructura del repositorio
 
 ```
-ISW-2019
-├── 01 Filminas
+ISW-2019/
+├── 01 Líneas Base
+│   └── LB-01-Primera parte de la materia
+│       ├── DOC-LB01-01-Filminas-Introducción a Cursada.pdf
+│       ├── DOC-LB01-02-Filminas-Ing de Software.pdf
+│       ├── DOC-LB01-03-Filminas-Componentes de Proy de Software.pdf
+│       ├── DOC-LB01-04-Filminas-Lean Agile.pdf
+│       ├── DOC-LB01-05-Filminas-User Stories.pdf
+│       ├── DOC-LB01-06-Filminas-SCM.pdf
+│       ├── DOC-LB01-07-Documentos de la cátedra-Bibliografía 2019.pdf
+│       ├── DOC-LB01-08-Documentos de la cátedra-Modalidad Académica 2019.pdf
+│       ├── DOC-LB01-09-Guías de Trabajo-Ejercicios Resueltos.pdf
+│       ├── DOC-LB01-10-Guías de Trabajo-Enunciados De Trabajos Prácticos evaluables.pdf
+│       └── DOC-LB01-11-Guías de Trabajo-Lineamientos para trabajos teóricos.pdf
+├── 02 Filminas
 │   ├── FC-01-Introducción a Cursada.pdf
 │   ├── FC-02-Ing de Software.pdf
 │   ├── FC-03-Componentes de Proy de Software.pdf
 │   ├── FC-04-Lean Agile.pdf
 │   ├── FC-05-User Stories.pdf
 │   └── FC-06-SCM.pdf
-├── 02 Trabajos evaluables
+├── 03 Trabajos evaluables
 │   └── Trabajos conceptuales
 │       └── TC-01-Integración continua.pdf
-├── 03 Documentos de Catedra
+├── 04 Documentos de la cátedra
 │   ├── Bibliografía-2019.pdf
 │   └── MOD-ACAD-ISW-2019.pdf
-├── 04 Guias de trabajos
+├── 05 Guías de trabajos
 │   ├── GT-Ejercicios Resueltos.pdf
 │   ├── GT-Enunciados De Trabajos Prácticos evaluables.pdf
 │   └── GT-Lineamientos para trabajos teóricos.pdf
-├── 05 Material de Clase
+├── 06 Material de Clase
 │   ├── MC-01-Cartas de Poker Estimations-Practico.pdf
 │   └── MC-02-Dinamicas de Scrum-Practico.pdf
-├── 06 Notas
+├── 07 Notas
 │   └── NC-20190830-Gestión de Configuración-Teorica.docx
-├── 07 Resúmenes
+├── 08 Resúmenes
 │   ├── R-Desconocido-2019.docx.docx
 │   └── R-Gonzalo Martinez-2019.docx.docx
+├── 09 Implementacion
+│   ├── css
+│   │   ├── bootstrap.css
+│   │   ├── bootstrap.css.map
+│   │   ├── bootstrap-grid.css
+│   │   ├── bootstrap-grid.css.map
+│   │   ├── bootstrap-grid.min.css
+│   │   ├── bootstrap-grid.min.css.map
+│   │   ├── bootstrap.min.css
+│   │   ├── bootstrap.min.css.map
+│   │   ├── bootstrap-reboot.css
+│   │   ├── bootstrap-reboot.css.map
+│   │   ├── bootstrap-reboot.min.css
+│   │   └── bootstrap-reboot.min.css.map
+│   ├── img
+│   │   ├── comida.png
+│   │   ├── delivery.jpeg
+│   │   └── success-icon.png
+│   ├── index.html
+│   ├── js
+│   │   ├── angular.min.js
+│   │   ├── app.js
+│   │   ├── bootstrap.bundle.js
+│   │   ├── bootstrap.bundle.js.map
+│   │   ├── bootstrap.bundle.min.js
+│   │   ├── bootstrap.bundle.min.js.map
+│   │   ├── bootstrap.js
+│   │   ├── bootstrap.js.map
+│   │   ├── bootstrap.min.js
+│   │   └── bootstrap.min.js.map
+│   ├── misCSS
+│   │   └── General.css
+│   └── successful.html
 └── README.md
 ```
 
