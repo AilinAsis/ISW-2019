@@ -41,7 +41,7 @@
                     ng-trim="false" maxlength="{{caractRest}}"></textarea>
                 <small style="color:grey">
                     Caracteres restantes <span style="color:red"
-                        name="cantCaract">{{caractRest - Descripcion.length}}</span>
+                        name="cantCaract">{{caractRest - descripcion.length}}</span>
                 </small>
 
                 <div class="form-group mt-3">
@@ -70,11 +70,11 @@
                 <div ng-show="estadoDondeConseguir === 'D'">
                     <div class="form-row">
                         <div class="col-8">
-                            <!--<input class="form-control" type="text" placeholder="Calle">-->
-                            <input class="form-control" type="text" maxlength="50" placeholder="Calle">
+                            <input class="form-control" type="text" maxlength="50" placeholder="Calle"
+                                ng-model="calle1">
                         </div>
                         <div class="col">
-                            <input type="number" class="form-control" maxlength="5"
+                            <input type="text" class="form-control" maxlength="5" id="nroCalle1" ng-model="calleNro1"
                                 oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                 placeholder="Número" />
                         </div>
@@ -107,10 +107,10 @@
 
             <div class="form-row">
                 <div class="col-8">
-                    <input class="form-control" type="text" maxlength="50" placeholder="Calle">
+                    <input class="form-control" type="text" maxlength="50" placeholder="Calle" ng-model="calle2">
                 </div>
                 <div class="col">
-                    <input type="number" class="form-control" maxlength="5"
+                    <input type="text" class="form-control" maxlength="5" id="nroCalle2" ng-model="calleNro2"
                         oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                         placeholder="Número" />
                 </div>
