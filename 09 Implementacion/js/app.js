@@ -2,6 +2,10 @@ angular.module('app', [])
     .controller('appCtrl', ($scope) => {
         $scope.caractRest = 180; // Cantidad de caracteres para describir el producto deseado.
         $scope.descripcion = '';
+        $scope.calle1 = '';
+        $scope.calleNro1 = '';
+        $scope.calle2 = '';
+        $scope.calleNro2 = '';
 
         /*
         Indica si la alerta de una imagen incorrecta debe ser mostrada o no.
@@ -101,11 +105,14 @@ angular.module('app', [])
             accessToken: accessToken
         }).addTo(mymap);
 
-        let marker = L.marker([51.505, -0.09]).addTo(mymap);
+        // let marker = L.marker([51.505, -0.09]).addTo(mymap);
+        let marker = null;
 
         // Eventos
         const onMapClick = (e) => {
-            mymap.removeLayer(marker);
+            if (marker !== null) {
+                mymap.removeLayer(marker);
+            }
             marker = L.marker(e.latlng).addTo(mymap);
         }
 
@@ -123,15 +130,54 @@ angular.module('app', [])
             }
 
             // Validar donde conseguirlo
+            if ($scope.radioDireccion) {
+                if ($scope.calle1 === '' || $scope.calleNro1 === '') {
+                    alert('Debe ingresar la direccion donde conseguir el producto')
+                    pasa = false;
+                }
+            } else {
+                // Validar mapa
+                if (marker === null) {
+                    alert('Debe seleccionar un lugar en el mapa')
+                    pasa = false;
+                }
+            }
+
             // Validar donde llevarlo
+            if ($scope.calle2 === '' || $scope.calleNro2 === '') {
+                alert('Debe ingresar la direccion donde llevar el producto')
+                pasa = false;
+            }
             // Validar forma de pago
             // Validar cuando recibirlo
 
             if (pasa) {
                 window.location = '/successful.html'
-            } else {
-
             }
         };
 
     });
+
+// Funcion que restringe algun input a ciertos caracteres
+function setInputFilter(textbox, inputFilter) {
+    ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop"].forEach(function (event) {
+        textbox.addEventListener(event, function () {
+            if (inputFilter(this.value)) {
+                this.oldValue = this.value;
+                this.oldSelectionStart = this.selectionStart;
+                this.oldSelectionEnd = this.selectionEnd;
+            } else if (this.hasOwnProperty("oldValue")) {
+                this.value = this.oldValue;
+                this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+            }
+        });
+    });
+}
+
+// Solo permitir numeros en el input de la calle
+setInputFilter(document.getElementById("nroCalle1"), function (value) {
+    return /^\d*$/.test(value);
+});
+setInputFilter(document.getElementById("nroCalle2"), function (value) {
+    return /^\d*$/.test(value);
+});

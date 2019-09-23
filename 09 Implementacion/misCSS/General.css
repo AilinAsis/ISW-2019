@@ -1,6 +1,5 @@
 ﻿body {
     background-color: #e5e4e4;
-    font-family: Calibri;
 }
 
 input {
@@ -77,12 +76,3 @@ textarea.ng-invalid {
 {
     background-color:#FFC107;
 }*/
-
-#divImagen
-{
-    position:relative;
-    left:-10px;
-    opacity:0.8;
-}
-
-
