@@ -37,15 +37,15 @@ ISW-2019
 | Nombre                         | Regla de nombrado                            | Ubicación física                              |
 | ------------------------------ | ---------------------------------------------| --------------------------------------------- |
 | Filminas de clases             | FC-\<nro\>-\<tema\>.pdf                      | /01 Filminas                                  |
-| Trabajos prácticos             | TP-\<nro\>-\<tema\>.pdf                      | /02 Trabajos evaluables/Trabajos practicos    |
+| Trabajos prácticos             | TP-\<nro\>-\<tema\>.pdf                      | /02 Trabajos evaluables/Trabajos prácticos    |
 | Trabajos conceptuales          | TC-\<nro\>-\<tema\>.pdf                      | /02 Trabajos evaluables/Trabajos conceptuales |
-| Modalidad académica            | MOD-ACAD-ISW\<YYYY\>.pdf                     | /03 Documentos de la catedra                  |
-| Guías de trabajo               | GT-\<nombre\>.pdf                            | /04 Guias de trabajos                         |
+| Modalidad académica            | MOD-ACAD-ISW\<YYYY\>.pdf                     | /03 Documentos de la cátedra                  |
+| Guías de trabajo               | GT-\<nombre\>.pdf                            | /04 Guías de trabajos                         |
 | Material de trabajo para clase | MC-\<nro\>-\<tema\>-\<tipo\>.pdf             | /05 Material de clase                         |
 | Notas de clase                 | NC-\<YYYYMMDD\>-\<tema\>-\<tipo\>.docx       | /06 Notas                                     |
-| Resumenes                      | R-\<autor/es\>-\<YYYY\>.\<extensión\>        | /07 Resumenes                                 |
+| Resúmenes                      | R-\<autor/es\>-\<YYYY\>.\<extensión\>        | /07 Resúmenes                                 |
 | Ejercicios resueltos           | EJ-\<nro\>-\<unidad\>-\<tema\>.\<extensión\> | /08 Ejercicios resueltos                      |
-| Bibliografía                   | Bibliografia\<YYYY\>.pdf                     | /03 Documentos de la catedra                  |
+| Bibliografía                   | Bibliografia\<YYYY\>.pdf                     | /03 Documentos de la cátedra                  |
 | Plan de SCM                    | README.md                                    | /                                             |
 
 
