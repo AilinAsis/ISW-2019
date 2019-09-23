@@ -20,7 +20,7 @@
 
 
         <div id="divImagen" class="d-flex">
-            <img class="flex-fill" src="comida.png" />
+            <img class="" src="img/delivery.jpeg" />
         </div>
 
 
@@ -36,7 +36,7 @@
 
                 <h4>¿Qué producto deseas?</h4>
 
-                <textarea class="form-control" name="Descripcion" ng-model="Descripcion"
+                <textarea class="form-control" ng-model="descripcion"
                     placeholder="Describe el producto que debemos conseguir" ng-maxlength="{{caractRest}}"
                     ng-trim="false" maxlength="{{caractRest}}"></textarea>
                 <small style="color:grey">
@@ -56,58 +56,49 @@
                 </div>
             </div>
 
-            <div id="mapid" style="height: 512px"></div>
-
-            <!-- <div id="GoogleMaps">
-                <p style="margin-top:20px">Tambien podes buscarte por Google Maps! </p>
-
-                <div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3">
-                    <div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div>
-                    <script>(function () {
-                            var setting = { "height": 471, "width": 803, "zoom": 11, "queryString": "Córdoba, Cordoba, Argentina", "place_id": "ChIJaVuPR1-YMpQRkrBmU5pPorA", "satellite": false, "centerCoord": [-31.399466095395084, -64.194344], "cid": "0xb0a24f9a5366b092", "cityUrl": "/argentina/cordoba-18277", "id": "map-9cd199b9cc5410cd3b1ad21cab2e54d3", "embed_id": "82538" };
-                            var d = document;
-                            var s = d.createElement('script');
-                            s.src = 'https://1map.com/js/script-for-user.js?embed_id=82538';
-                            s.async = true;
-                            s.onload = function (e) {
-                                window.OneMap.initMap(setting)
-                            };
-                            var to = d.getElementsByTagName('script')[0];
-                            to.parentNode.insertBefore(s, to);
-                        })();</script><a href="https://1map.com/map-embed?embed_id=82538">1map.com</a>
-                </div>
-            </div> -->
-
             <hr>
 
             <div id="dondeLoConseguimos">
 
                 <h4>¿Dónde lo conseguimos?</h4>
 
+                <div class="mt-3 d-flex" ng-click="setRadioDireccion()">
+                    <input type="radio" ng-checked="radioDireccion">
+                    <small class="ml-2">Ingresando la dirección</small>
+                </div>
 
-                <div class="form-row">
-                    <div class="col-8">
-                        <!--<input class="form-control" type="text" placeholder="Calle">-->
-                        <input class="form-control" type="text" maxlength="50" placeholder="Calle">
+                <div ng-show="estadoDondeConseguir === 'D'">
+                    <div class="form-row">
+                        <div class="col-8">
+                            <!--<input class="form-control" type="text" placeholder="Calle">-->
+                            <input class="form-control" type="text" maxlength="50" placeholder="Calle">
+                        </div>
+                        <div class="col">
+                            <input type="number" class="form-control" maxlength="5"
+                                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                placeholder="Número" />
+                        </div>
                     </div>
-                    <div class="col">
-                        <input type="number" class="form-control" maxlength="5"
-                            oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                            placeholder="Número" />
+
+                    <div>
+                        <select class="form-control comboBox">
+                            <option>Cordoba</option>
+                            <option>Almafuerte</option>
+                            <option>Berrotaran</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <input class="form-control" type="text" name="" id="" maxlength="200" placeholder="Referencias">
                     </div>
                 </div>
 
-                <div>
-                    <select class="form-control comboBox">
-                        <option>Cordoba</option>
-                        <option>Almafuerte</option>
-                        <option>Berrotaran</option>
-                    </select>
+                <div class="mt-3 d-flex" ng-click="setRadioMapa()">
+                    <input type="radio" ng-checked="radioMapa">
+                    <small class="ml-2">Ó seleccionando en el mapa</small>
                 </div>
 
-                <div>
-                    <input class="form-control" type="text" name="" id="" maxlength="200" placeholder="Referencias">
-                </div>
+                <div id="mapid" style="height: 512px" ng-show="estadoDondeConseguir === 'M'"></div>
             </div>
 
             <hr>
@@ -202,12 +193,16 @@
             <hr>
 
             <div class="d-flex">
-                <button class="btn btn-warning border border-secondary flex-fill p-2">
+                <button class="btn btn-warning border border-secondary flex-fill p-2" ng-click="realizarPedido()">
                     PEDIR
                 </button>
             </div>
 
         </form>
+    </div>
+
+    <div class="jumbotron jumbotron-fluid bg-secondary mx-0 mt-5 mb-0 p-4">
+        <p class="text-white">© 2019 - Grupo 3 - Todos los derechos reservados.</p>
     </div>
 
     <script src="js/bootstrap.min.js"></script>

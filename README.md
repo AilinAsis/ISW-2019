@@ -46,6 +46,7 @@ ISW-2019
 | Resumenes                      | R-\<autor/es\>-\<YYYY\>.\<extensión\>        | /07 Resumenes                                 |
 | Ejercicios resueltos           | EJ-\<nro\>-\<unidad\>-\<tema\>.\<extensión\> | /08 Ejercicios resueltos                      |
 | Bibliografía                   | Bibliografia\<YYYY\>.pdf                     | /03 Documentos de la catedra                  |
+| Plan de SCM                    | README.md                                    | /                                             |
 
 
 ## Glosario

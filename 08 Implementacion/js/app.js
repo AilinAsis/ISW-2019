@@ -1,6 +1,7 @@
 angular.module('app', [])
     .controller('appCtrl', ($scope) => {
         $scope.caractRest = 180; // Cantidad de caracteres para describir el producto deseado.
+        $scope.descripcion = '';
 
         /*
         Indica si la alerta de una imagen incorrecta debe ser mostrada o no.
@@ -36,6 +37,25 @@ angular.module('app', [])
             }
         };
 
+        // Visualizacion del mapa o direccion ========================================================================
+
+        $scope.estadoDondeConseguir = 'D'; // D = Direccion, M = Mapa
+        $scope.radioDireccion = true;
+        $scope.radioMapa = false;
+
+        $scope.setRadioDireccion = () => {
+            $scope.estadoDondeConseguir = 'D';
+            $scope.radioDireccion = true;
+            $scope.radioMapa = false;
+        }
+
+        $scope.setRadioMapa = () => {
+            $scope.estadoDondeConseguir = 'M';
+            $scope.radioDireccion = false;
+            $scope.radioMapa = true;
+        }
+
+
         // Visualizacion de las formas de pago ========================================================================
         $scope.estadoFormaPago = 'N'; // N = Ninguna, E = Efectivo, T = Tarjeta
         $scope.radioEfectivo = false;
@@ -69,7 +89,7 @@ angular.module('app', [])
             $scope.radioSelecFechaHora = true;
         }
 
-        // Codigo del mapa.
+        // Codigo del mapa ===========================================================================
         const accessToken = 'pk.eyJ1Ijoic29ibzRnYW1lcyIsImEiOiJjazBzNnNlY24wYXZwM25waHc2amp2aGJ1In0.NP_7pR_qpVmjFmU-9UrE6Q';
 
         const mymap = L.map('mapid').setView([-31.42, -64.19], 14);
@@ -90,5 +110,28 @@ angular.module('app', [])
         }
 
         mymap.on('click', onMapClick);
+
+
+        // Logica de realizar el pedido ============================================================
+        $scope.realizarPedido = () => {
+            let pasa = true; // Variable auxiliar para saber si pasa o no las validaciones
+
+            // Validar descripcion del producto
+            if ($scope.descripcion === '') {
+                alert('Debe ingresar una descripcion de lo que desea');
+                pasa = false;
+            }
+
+            // Validar donde conseguirlo
+            // Validar donde llevarlo
+            // Validar forma de pago
+            // Validar cuando recibirlo
+
+            if (pasa) {
+                window.location = '/successful.html'
+            } else {
+
+            }
+        };
 
     });
