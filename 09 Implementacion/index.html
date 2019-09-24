@@ -20,7 +20,7 @@
 
 
         <div id="divImagen" class="d-flex">
-            <img class="flex-fill" src="img/delivery.jpeg" />
+            <img style="width:100%" class="flex-fill" src="img/delivery.jpeg" />
         </div>
 
 
@@ -188,25 +188,10 @@
 
             <div class="form-row" ng-show="estadoCuandoRecibir === 'S'">
                 <div>
-                    <select class="form-control comboBox">
-                        <option>45 Min</option>
-                        <option>1 hora</option>
-                        <option>1 hora 15 min</option>
-                        <option>1 hora 30 min</option>
-                        <option>1 hora 45 min</option>
-                        <option>2 horas</option>
-                        <option>2 horas 15 min</option>
-                        <option>2 horas 30 min</option>
-                        <option>3 horas</option>
-                        <option>4 horas</option>
-                        <option>6 horas</option>
-                        <option>8 horas</option>
-                        <option>12 horas</option>
-                        <option>18 horas</option>
-                    </select>
+                    <input type="text" class="form-control" id="textFecha" placeholder="Fecha">
+                    <input type="text" class="form-control" id="textHora" placeholder="Hora">
                 </div>
-                <!--<input type="text" class="form-control" id="textFecha" placeholder="Fecha">
-                <input type="text" class="form-control" id="textHora" placeholder="Hora">-->
+                
             </div>
 
             <hr>

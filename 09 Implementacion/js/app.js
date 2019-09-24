@@ -80,6 +80,40 @@ angular.module("app", [])
             }
         }
 
+        //Validar Fecha Entera
+        function validarFormatoFechaEntera(campo) {
+            var RegExPattern = /^\d{1,2}\/\d{1,2}\/\d{2,4}$/;
+            if ((campo.match(RegExPattern)) && (campo != "")) {
+                var campos = campo.split("/")
+                var dia = campos[0]
+                var mes = campos[1];
+                var año = campos[2];
+                var hoy = new Date();
+                if ((dia < 32) && (dia > 0) && (mes < 13) && (mes > 0) && (año < 2040) && (año > 0)) {
+                    if (año > 2019 - 1) {
+                        if ((año == 2019) && (mes > 9 - 1)) {
+                            if ((mes == 9) && (dia > 24 - 1)) {
+                                return true;
+                            } else
+                                if (mes > 9) {
+                                    return true;
+                                }
+                        } else
+                        {
+                            if (año > 2019)
+                            {
+                                return true;
+                            }
+                        }
+                }
+                }else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        }
+
 
         // Visualizacion de las formas de pago
         $scope.estadoFormaPago = "N"; // N = Ninguna, E = Efectivo, T = Tarjeta
@@ -179,8 +213,9 @@ angular.module("app", [])
             }
             //Validar campo de monto en caso que seleccione efectivo
             if (isCheckedEfectivo) {
-                if (document.getElementById("textMontoEfectivo").value === "") {
-                    alert("Debe ingresar un monto");
+                var valueTextEfectivo = document.getElementById("textMontoEfectivo").value;
+                if ((valueTextEfectivo === "") || ((valueTextEfectivo < 1) || (valueTextEfectivo > 100001)) ) {
+                    alert("Debe ingresar un monto valido");
                     pasa = false;
                 }
             }
@@ -218,6 +253,30 @@ angular.module("app", [])
                 alert("Debe seleccionar cuando desea recibirlo");
                 pasa = false;
             }
+
+            // Validar Fecha de envio
+            if (isCheckedSelectFecha)
+            {
+                var hoy = new Date();
+                var valueTextFecha = document.getElementById("textFecha").value;
+                var valueTextHora = document.getElementById("textHora").value;
+                if ((valueTextFecha === "") || (valueTextHora === "")) {
+                    alert("Ingrese una fecha de envio");
+                    pasa = false;
+                } else {
+                    if (!(validarFormatoFechaEntera(valueTextFecha))) {
+                        alert("Debe ingresar una fecha valida (DD/MM/AAAA)");
+                        pasa = false;
+                    }
+                    if (!(valueTextHora > hoy.getHours())) {
+                        alert("Debe ingresar un pedido con una hora de diferencia o mas");
+                        pasa = false;
+                    }
+                }
+            }
+            
+
+
 
             if (pasa) {
                 window.location += "/successful.html";
