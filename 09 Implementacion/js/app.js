@@ -98,15 +98,13 @@ angular.module("app", [])
                                 if (mes > 9) {
                                     return true;
                                 }
-                        } else
-                        {
-                            if (año > 2019)
-                            {
+                        } else {
+                            if (año > 2019) {
                                 return true;
                             }
                         }
-                }
-                }else {
+                    }
+                } else {
                     return false;
                 }
             } else {
@@ -214,7 +212,7 @@ angular.module("app", [])
             //Validar campo de monto en caso que seleccione efectivo
             if (isCheckedEfectivo) {
                 var valueTextEfectivo = document.getElementById("textMontoEfectivo").value;
-                if ((valueTextEfectivo === "") || ((valueTextEfectivo < 1) || (valueTextEfectivo > 100001)) ) {
+                if ((valueTextEfectivo === "") || ((valueTextEfectivo < 1) || (valueTextEfectivo > 100001))) {
                     alert("Debe ingresar un monto valido");
                     pasa = false;
                 }
@@ -255,28 +253,25 @@ angular.module("app", [])
             }
 
             // Validar Fecha de envio
-            if (isCheckedSelectFecha)
-            {
+            if (isCheckedSelectFecha) {
                 var hoy = new Date();
                 var valueTextFecha = document.getElementById("textFecha").value;
                 var valueTextHora = document.getElementById("textHora").value;
                 if ((valueTextFecha === "") || (valueTextHora === "")) {
-                    alert("Ingrese una fecha de envio");
+                    alert("Ingrese la fecha y hora de envio");
                     pasa = false;
                 } else {
                     if (!(validarFormatoFechaEntera(valueTextFecha))) {
                         alert("Debe ingresar una fecha valida (DD/MM/AAAA)");
                         pasa = false;
                     }
-                    if (!(valueTextHora > hoy.getHours())) {
+
+                    if (valueTextFecha.substr(0, 2) === hoy.getDate().toString() && (valueTextHora < hoy.getHours() + 1)) {
                         alert("Debe ingresar un pedido con una hora de diferencia o mas");
                         pasa = false;
                     }
                 }
             }
-            
-
-
 
             if (pasa) {
                 window.location += "/successful.html";

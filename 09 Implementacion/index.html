@@ -188,10 +188,13 @@
 
             <div class="form-row" ng-show="estadoCuandoRecibir === 'S'">
                 <div>
-                    <input type="text" class="form-control" id="textFecha" placeholder="Fecha">
+                    <div>
+                        <small class="text-muted">La fecha debe contener el siguiente formato: (DD/MM/AAAA)</small>
+                        <input type="text" class="form-control" id="textFecha" placeholder="Fecha">
+                    </div>
                     <input type="text" class="form-control" id="textHora" placeholder="Hora">
                 </div>
-                
+
             </div>
 
             <hr>
