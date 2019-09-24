@@ -1,0 +1,78 @@
+﻿body {
+    background-color: #e5e4e4;
+}
+
+input {
+    background-color: #ffffff;
+    border-radius: 5px;
+    max-width: 100%
+}
+
+#titulo {
+    margin: 10px;
+    max-width: 100%
+}
+
+#formUno {
+    margin: 5px;
+    max-width: 100%
+}
+
+div {
+    margin: 2px;
+    max-width: 100%
+}
+
+#ciudad {
+    margin-top: 5px;
+    max-width: 100%
+}
+
+#GoogleMaps {
+    background-color: #cbcbcb;
+    color: grey;
+    max-width: 100%
+}
+
+#dondeLoConseguimos {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    max-width: 100%
+}
+
+#queProducto {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    max-width: 100%
+}
+
+.btnSig {
+    background-color: #FFC107;
+    border-radius: 7px;
+    max-width: 100%
+}
+
+.comboBox {
+    background-color: #ffffff;
+    border-radius: 3px;
+    max-width: 100%
+}
+
+p {
+    color: grey;
+    max-width: 100%
+}
+
+input.ng-invalid {
+    background-color: pink;
+}
+
+
+textarea.ng-invalid {
+    background-color: pink;
+}
+
+/*#divProd
+{
+    background-color:#FFC107;
+}*/

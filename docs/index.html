@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html lang="es" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pedir lo que sea</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="misCSS/General.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+
+</head>
+
+<body>
+
+    <div ng-app="myApp" class="container mt-0" ng-controller="appCtrl">
+
+
+        <div id="divImagen" class="d-flex">
+            <img class="flex-fill" src="img/delivery.jpeg" />
+        </div>
+
+
+        <h1 class="text-center mt-3">Pedí lo que sea</h1>
+        <p>Si entra en nuestra mochila te lo llevamos</p>
+
+        <hr>
+
+
+        <form novalidate>
+
+            <div id="divProd">
+
+                <h4>¿Qué producto deseas?</h4>
+
+                <textarea class="form-control" ng-model="descripcion"
+                    placeholder="Describe el producto que debemos conseguir" ng-maxlength="{{caractRest}}"
+                    ng-trim="false" maxlength="{{caractRest}}"></textarea>
+                <small style="color:grey">
+                    Caracteres restantes <span style="color:red"
+                        name="cantCaract">{{caractRest - descripcion.length}}</span>
+                </small>
+
+                <div class="form-group mt-3">
+                    <label>Agregar Foto<small class="text-muted ml-3">*La foto es opcional.</small></label>
+                    <input type="file" class="form-control-file" id="inputImagen" />
+                </div>
+                <div class="text-danger" ng-show="mostrarAlertaImagen === 'E'">
+                    La extensión del archivo es incorrecta.
+                </div>
+                <div class="text-danger" ng-show="mostrarAlertaImagen === 'G'">
+                    El archivo es demasiado grande (>5MB).
+                </div>
+            </div>
+
+            <hr>
+
+            <div id="dondeLoConseguimos">
+
+                <h4>¿Dónde lo conseguimos?</h4>
+
+                <div class="mt-3 d-flex" ng-click="setRadioDireccion()">
+                    <input type="radio" ng-checked="radioDireccion">
+                    <small class="ml-2">Ingresando la dirección</small>
+                </div>
+
+                <div ng-show="estadoDondeConseguir === 'D'">
+                    <div class="form-row">
+                        <div class="col-8">
+                            <input class="form-control" type="text" maxlength="50" placeholder="Calle"
+                                ng-model="calle1">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" maxlength="5" id="nroCalle1" ng-model="calleNro1"
+                                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                placeholder="Número" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <select class="form-control comboBox">
+                            <option>Cordoba</option>
+                            <option>Almafuerte</option>
+                            <option>Berrotaran</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <input class="form-control" type="text" name="" id="" maxlength="200" placeholder="Referencias">
+                    </div>
+                </div>
+
+                <div class="mt-3 d-flex" ng-click="setRadioMapa()">
+                    <input type="radio" ng-checked="radioMapa">
+                    <small class="ml-2">Ó seleccionando en el mapa</small>
+                </div>
+
+                <div id="mapid" style="height: 512px" ng-show="estadoDondeConseguir === 'M'"></div>
+            </div>
+
+            <hr>
+
+            <h4>¿Dónde lo llevamos?</h4>
+
+            <div class="form-row">
+                <div class="col-8">
+                    <input class="form-control" type="text" maxlength="50" placeholder="Calle" ng-model="calle2">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" maxlength="5" id="nroCalle2" ng-model="calleNro2"
+                        oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                        placeholder="Número" />
+                </div>
+            </div>
+
+            <div>
+                <select class="form-control comboBox">
+                    <option value="">Cordoba</option>
+                    <option value="">Almafuerte</option>
+                    <option value="">Berrotaran</option>
+                </select>
+            </div>
+
+            <div>
+                <input class="form-control" type="text" maxlength="200" placeholder="Referencias">
+            </div>
+
+            <hr>
+
+            <h4>Forma de pago</h4>
+            <div class="form-check form-check-inline">
+                <div class="form-check" ng-click="setRadioEfectivo()">
+                    <input class="form-check-input" type="radio" ng-checked="radioEfectivo">
+                    <label class="form-check-label" for="">
+                        Efectivo
+                    </label>
+                </div>
+
+                <div class="form-check" ng-click="setRadioTarjeta()">
+                    <input class="form-check-input" type="radio" ng-checked="radioTarjeta">
+                    <label class="form-check-label" for="">
+                        Tarjeta VISA
+                    </label>
+                </div>
+            </div>
+
+            <div ng-show="estadoFormaPago === 'E'">
+                <input type="text" class="form-control" placeholder="Monto a pagar">
+            </div>
+
+            <div ng-show="estadoFormaPago === 'T'">
+                <div class="form-row">
+                    <div class="col-8">
+                        <input type="text" class="form-control" placeholder="Número de tarjeta">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="CVC">
+                    </div>
+                </div>
+
+                <input type="text" class="form-control" placeholder="Nombre y apellido titular">
+                <input type="text" class="form-control" placeholder="Fecha de vencimiento (MM/AAAA)">
+            </div>
+
+            <hr>
+
+            <h4>¿Cuándo quieres recibirlo?</h4>
+
+            <div class="form-check form-check-inline">
+                <div class="form-check" ng-click="setRadioAntesPosible()">
+                    <input class="form-check-input" type="radio" ng-checked="radioAntesPosible">
+                    <label class="form-check-label" for="">
+                        Lo antes posible
+                    </label>
+                </div>
+
+                <div class="form-check" ng-click="setRadioSelecFechaHora()">
+                    <input class="form-check-input" type="radio" ng-checked="radioSelecFechaHora">
+                    <label class="form-check-label" for="">
+                        Seleccionar fecha/hora
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-row" ng-show="estadoCuandoRecibir === 'S'">
+                <input type="text" class="col form-control" placeholder="Fecha">
+                <input type="text" class="col form-control" placeholder="Hora">
+            </div>
+
+            <hr>
+
+            <div class="d-flex">
+                <button class="btn btn-warning border border-secondary flex-fill p-2" ng-click="realizarPedido()">
+                    PEDIR
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+    <div class="jumbotron jumbotron-fluid bg-secondary mx-0 mt-5 mb-0 p-4">
+        <p class="text-white">© 2019 - Grupo 3 - Todos los derechos reservados.</p>
+    </div>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+        integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+        crossorigin=""></script>
+</body>
+
+</html>
+
+<!-- Interfaz v1.2 -->
