@@ -23,7 +23,11 @@ ISW-2019/
 │   ├── FC-03-Componentes de Proy de Software.pdf
 │   ├── FC-04-Lean Agile.pdf
 │   ├── FC-05-User Stories.pdf
-│   └── FC-06-SCM.pdf
+│   ├── FC-06-SCM.pdf
+│   ├── FC-07-Testing primera parte.pdf
+│   ├── FC-08-Testing segunda parte.pdf
+│   ├── FC-09-Metricas.pdf
+│   └── FC-10-Kanban.pdf
 ├── 03 Trabajos evaluables
 │   └── Trabajos conceptuales
 │       └── TC-01-Integración continua.pdf
