@@ -6,6 +6,8 @@ angular.module('app', [])
         $scope.calleNro1 = '';
         $scope.calle2 = '';
         $scope.calleNro2 = '';
+        $scope.TarjetasVISA = ["4213231421146235", "4112112589562185", "4898754821599231"];
+        $scope.TarjetasMastercard = ["5523342523142142", "5123216975847194", "5125982452815428"];
 
         /*
         Indica si la alerta de una imagen incorrecta debe ser mostrada o no.
@@ -57,6 +59,25 @@ angular.module('app', [])
             $scope.estadoDondeConseguir = 'M';
             $scope.radioDireccion = false;
             $scope.radioMapa = true;
+        }
+
+        //Validador de fechas
+
+        function validarFormatoFecha(campo) {
+            var RegExPattern = /^\d{1,2}\/\d{2,4}$/;
+            if ((campo.match(RegExPattern)) && (campo != '')) {
+                var campos = campo.split("/")
+                var mes = campos[0];
+                var año = campos[1];
+                if ((mes > 0) && (mes < 13) && (año > 1994) && (año < 2041)) {
+                    
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
         }
 
 
@@ -143,13 +164,77 @@ angular.module('app', [])
                 }
             }
 
+
+
+
             // Validar donde llevarlo
             if ($scope.calle2 === '' || $scope.calleNro2 === '') {
-                alert('Debe ingresar la direccion donde llevar el producto')
+                alert('Debe ingresar la direccion donde llevar el producto');
                 pasa = false;
             }
+
             // Validar forma de pago
+            var isCheckedEfectivo = document.getElementById('RadioEfectivo').checked;
+            var isCheckedTarjeta = document.getElementById('RadioTarjeta').checked;
+            if (!isCheckedEfectivo && !isCheckedTarjeta)
+            {
+                alert('Debe seleccionar un metodo de pago')
+                pasa = false;
+            }
+            //Validar campo de monto en caso que seleccione efectivo
+            if (isCheckedEfectivo)
+            {
+                if (document.getElementById('textMontoEfectivo').value === '')
+                {
+                    alert('Debe ingresar un monto')
+                    pasa = false;
+                }
+            }
+
+            //Validar campos de tarjeta en caso que seleccione pago con tarjeta
+            if (isCheckedTarjeta)
+            {
+                var valueTextNumTarjeta = document.getElementById('textNumTarjeta').value;
+                var valueTextCVC = document.getElementById('textCVC').value;
+                var valueTextNombreApellido = document.getElementById('textNombreApellido').value;
+                var valueTextFechaVencimiento = document.getElementById('textFechaVencimiento').value;
+                if (!(valueTextNumTarjeta && valueTextCVC && valueTextNombreApellido && valueTextFechaVencimiento)) {
+                    alert('Debe completar todos los campos de la tarjeta')
+                    pasa = false;
+                } else
+                    if (!((($scope.TarjetasVISA.includes(valueTextNumTarjeta.toString())) || ($scope.TarjetasMastercard.includes(valueTextNumTarjeta.toString()))))) {
+                        alert('El numero de tarjeta ingresado no es valido')
+                        pasa = false;
+                    } else {
+                        if ($scope.TarjetasMastercard.includes(valueTextNumTarjeta.toString())) {
+                            alert('No esta permitido ingresar tarjetas MasterCard')
+                            pasa = false;
+                        }
+                    }
+                //Validar fechaVencimiento
+                if (!validarFormatoFecha(valueTextFechaVencimiento))
+                {
+                    alert('Debe colocar un formato de fecha de vencimiento correcto (MM/AAAA)')
+                    pasa = false;
+                }
+            }
+
+
+
+
+
             // Validar cuando recibirlo
+            var isCheckedAntesPosible = document.getElementById('RadioAntesPosible').checked;
+            var isCheckedSelectFecha = document.getElementById('RadioSelecFecha').checked;
+            if (!isCheckedAntesPosible && !isCheckedSelectFecha) {
+                alert('Debe seleccionar cuando desea recibirlo')
+                pasa = false;
+            }
+
+            
+
+
+
 
             if (pasa) {
                 window.location = '/successful.html'

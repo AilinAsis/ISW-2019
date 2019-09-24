@@ -133,14 +133,14 @@
             <h4>Forma de pago</h4>
             <div class="form-check form-check-inline">
                 <div class="form-check" ng-click="setRadioEfectivo()">
-                    <input class="form-check-input" type="radio" ng-checked="radioEfectivo">
+                    <input class="form-check-input" type="radio" id="RadioEfectivo" ng-checked="radioEfectivo">
                     <label class="form-check-label" for="">
                         Efectivo
                     </label>
                 </div>
 
                 <div class="form-check" ng-click="setRadioTarjeta()">
-                    <input class="form-check-input" type="radio" ng-checked="radioTarjeta">
+                    <input class="form-check-input" type="radio" id="RadioTarjeta"  ng-checked="radioTarjeta">
                     <label class="form-check-label" for="">
                         Tarjeta VISA
                     </label>
@@ -148,21 +148,21 @@
             </div>
 
             <div ng-show="estadoFormaPago === 'E'">
-                <input type="text" class="form-control" placeholder="Monto a pagar">
+                <input type="number" class="form-control" id="textMontoEfectivo" placeholder="Monto a pagar">
             </div>
 
             <div ng-show="estadoFormaPago === 'T'">
                 <div class="form-row">
                     <div class="col-8">
-                        <input type="text" class="form-control" placeholder="Número de tarjeta">
+                        <input type="number" class="form-control" id="textNumTarjeta" placeholder="Número de tarjeta">
                     </div>
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="CVC">
+                        <input type="number" class="form-control" id="textCVC" placeholder="CVC">
                     </div>
                 </div>
 
-                <input type="text" class="form-control" placeholder="Nombre y apellido titular">
-                <input type="text" class="form-control" placeholder="Fecha de vencimiento (MM/AAAA)">
+                <input type="text" class="form-control" id="textNombreApellido"  placeholder="Nombre y apellido titular">
+                <input type="text" class="form-control" id="textFechaVencimiento" placeholder="Fecha de vencimiento (MM/AAAA)">
             </div>
 
             <hr>
@@ -171,14 +171,14 @@
 
             <div class="form-check form-check-inline">
                 <div class="form-check" ng-click="setRadioAntesPosible()">
-                    <input class="form-check-input" type="radio" ng-checked="radioAntesPosible">
+                    <input class="form-check-input" type="radio" id="RadioAntesPosible"  ng-checked="radioAntesPosible">
                     <label class="form-check-label" for="">
                         Lo antes posible
                     </label>
                 </div>
 
                 <div class="form-check" ng-click="setRadioSelecFechaHora()">
-                    <input class="form-check-input" type="radio" ng-checked="radioSelecFechaHora">
+                    <input class="form-check-input" type="radio" id="RadioSelecFecha"  ng-checked="radioSelecFechaHora">
                     <label class="form-check-label" for="">
                         Seleccionar fecha/hora
                     </label>
@@ -186,8 +186,26 @@
             </div>
 
             <div class="form-row" ng-show="estadoCuandoRecibir === 'S'">
-                <input type="text" class="col form-control" placeholder="Fecha">
-                <input type="text" class="col form-control" placeholder="Hora">
+                <div>
+                    <select class="form-control comboBox">
+                        <option>45 Min</option>
+                        <option>1 hora</option>
+                        <option>1 hora 15 min</option>
+                        <option>1 hora 30 min</option>
+                        <option>1 hora 45 min</option>
+                        <option>2 horas</option>
+                        <option>2 horas 15 min</option>
+                        <option>2 horas 30 min</option>
+                        <option>3 horas</option>
+                        <option>4 horas</option>
+                        <option>6 horas</option>
+                        <option>8 horas</option>
+                        <option>12 horas</option>
+                        <option>18 horas</option>
+                    </select>
+                </div>
+                <!--<input type="text" class="form-control" id="textFecha" placeholder="Fecha">
+                <input type="text" class="form-control" id="textHora" placeholder="Hora">-->
             </div>
 
             <hr>
