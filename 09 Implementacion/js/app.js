@@ -61,7 +61,7 @@ angular.module("app", [])
             $scope.radioMapa = true;
         }
 
-        //Validador de fechas
+        //Validador de fechas de vencimiento
 
         function validarFormatoFecha(campo) {
             var RegExPattern = /^\d{1,2}\/\d{2,4}$/;
@@ -80,7 +80,10 @@ angular.module("app", [])
             }
         }
 
-        //Validar Fecha Entera
+        /*Validar Fecha Entera
+         * Toma una fecha con el formato DD/MM/AAAA y valida que los campos no excedan
+         * de del año 2040 y que sean valores despues de la fecha actual
+        */
         function validarFormatoFechaEntera(campo) {
             var RegExPattern = /^\d{1,2}\/\d{1,2}\/\d{2,4}$/;
             if ((campo.match(RegExPattern)) && (campo != "")) {
@@ -90,16 +93,16 @@ angular.module("app", [])
                 var año = campos[2];
                 var hoy = new Date();
                 if ((dia < 32) && (dia > 0) && (mes < 13) && (mes > 0) && (año < 2040) && (año > 0)) {
-                    if (año > 2019 - 1) {
-                        if ((año == 2019) && (mes > 9 - 1)) {
-                            if ((mes == 9) && (dia > 24 - 1)) {
+                    if (año > hoy.getFullYear() - 1) {
+                        if ((año == hoy.getFullYear()) && (mes > hoy.getMonth())) {
+                            if ((mes == hoy.getMonth()+1) && (dia > hoy.getDate() - 1)) {
                                 return true;
                             } else
-                                if (mes > 9) {
+                                if (mes > hoy.getMonth()+1) {
                                     return true;
                                 }
                         } else {
-                            if (año > 2019) {
+                            if (año > hoy.getFullYear()) {
                                 return true;
                             }
                         }
@@ -196,13 +199,13 @@ angular.module("app", [])
                 }
             }
 
-            // Validar donde llevarlo
+            // Validar donde llevarlo verificando que se ingreso la calle y el numero
             if ($scope.calle2 === "" || $scope.calleNro2 === "") {
                 alert("Debe ingresar la direccion donde llevar el producto");
                 pasa = false;
             }
 
-            // Validar forma de pago
+            // Validar forma de pago verificando si se selecciono una forma de pago
             var isCheckedEfectivo = document.getElementById("RadioEfectivo").checked;
             var isCheckedTarjeta = document.getElementById("RadioTarjeta").checked;
             if (!isCheckedEfectivo && !isCheckedTarjeta) {
@@ -237,14 +240,14 @@ angular.module("app", [])
                             pasa = false;
                         }
                     }
-                //Validar fechaVencimiento
+                //Validar fechaVencimiento verificando si se ingreso un formato de fecha valido (MM/AAAA)
                 if (!validarFormatoFecha(valueTextFechaVencimiento)) {
                     alert("Debe colocar un formato de fecha de vencimiento correcto (MM/AAAA)");
                     pasa = false;
                 }
             }
 
-            // Validar cuando recibirlo
+            // Validar cuando recibirlo determinando si fue seleccionada una opcion
             var isCheckedAntesPosible = document.getElementById("RadioAntesPosible").checked;
             var isCheckedSelectFecha = document.getElementById("RadioSelecFecha").checked;
             if (!isCheckedAntesPosible && !isCheckedSelectFecha) {
@@ -300,5 +303,12 @@ setInputFilter(document.getElementById("nroCalle1"), function (value) {
     return /^\d*$/.test(value);
 });
 setInputFilter(document.getElementById("nroCalle2"), function (value) {
+    return /^\d*$/.test(value);
+});
+// Solo permitir valores numericos no negativos en el input de monto y hora de entrega
+setInputFilter(document.getElementById("textMontoEfectivo"), function (value) {
+    return /^\d*$/.test(value);
+});
+setInputFilter(document.getElementById("textHora"), function (value) {
     return /^\d*$/.test(value);
 });

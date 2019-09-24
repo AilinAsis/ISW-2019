@@ -19,10 +19,10 @@
     <div ng-app="myApp" class="container mt-0" ng-controller="appCtrl">
 
 
-        <div id="divImagen" class="d-flex">
-            <img style="width:100%" class="flex-fill" src="img/delivery.jpeg" />
-        </div>
-
+        <!--<div id="divImagen" class="d-flex mx-0">
+            <img style="width:100%" class="flex-fill mx-0" src="img/delivery.jpeg" />
+        </div>-->
+        <img style="width:100%" class="flex-fill mx-0" src="img/delivery.jpeg" />
 
         <h1 class="text-center mt-3">Pedí lo que sea</h1>
         <p>Si entra en nuestra mochila te lo llevamos</p>
@@ -37,11 +37,11 @@
                 <h4>¿Qué producto deseas?</h4>
 
                 <textarea class="form-control" ng-model="descripcion"
-                    placeholder="Describe el producto que debemos conseguir" ng-maxlength="{{caractRest}}"
-                    ng-trim="false" maxlength="{{caractRest}}"></textarea>
+                          placeholder="Describe el producto que debemos conseguir" ng-maxlength="{{caractRest}}"
+                          ng-trim="false" maxlength="{{caractRest}}"></textarea>
                 <small style="color:grey">
                     Caracteres restantes <span style="color:red"
-                        name="cantCaract">{{caractRest - descripcion.length}}</span>
+                                               name="cantCaract">{{caractRest - descripcion.length}}</span>
                 </small>
 
                 <div class="form-group mt-3">
@@ -71,12 +71,12 @@
                     <div class="form-row">
                         <div class="col-8">
                             <input class="form-control" type="text" maxlength="50" placeholder="Calle"
-                                ng-model="calle1">
+                                   ng-model="calle1">
                         </div>
                         <div class="col">
                             <input type="text" class="form-control" maxlength="5" id="nroCalle1" ng-model="calleNro1"
-                                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                                placeholder="Número" />
+                                   oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                                   placeholder="Número" />
                         </div>
                     </div>
 
@@ -111,8 +111,8 @@
                 </div>
                 <div class="col">
                     <input type="text" class="form-control" maxlength="5" id="nroCalle2" ng-model="calleNro2"
-                        oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                        placeholder="Número" />
+                           oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                           placeholder="Número" />
                 </div>
             </div>
 
@@ -148,7 +148,7 @@
             </div>
 
             <div ng-show="estadoFormaPago === 'E'">
-                <input type="number" class="form-control" id="textMontoEfectivo" placeholder="Monto a pagar">
+                <input type="text" class="form-control" id="textMontoEfectivo" placeholder="Monto a pagar">
             </div>
 
             <div ng-show="estadoFormaPago === 'T'">
@@ -163,7 +163,7 @@
 
                 <input type="text" class="form-control" id="textNombreApellido" placeholder="Nombre y apellido titular">
                 <input type="text" class="form-control" id="textFechaVencimiento"
-                    placeholder="Fecha de vencimiento (MM/AAAA)">
+                       placeholder="Fecha de vencimiento (MM/AAAA)">
             </div>
 
             <hr>
