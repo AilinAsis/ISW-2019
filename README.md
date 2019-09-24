@@ -24,10 +24,10 @@ ISW-2019/
 │   ├── FC-04-Lean Agile.pdf
 │   ├── FC-05-User Stories.pdf
 │   ├── FC-06-SCM.pdf
-│   ├── FC-07-Testing primera parte.pdf
-│   ├── FC-08-Testing segunda parte.pdf
-│   ├── FC-09-Metricas.pdf
-│   └── FC-10-Kanban.pdf
+│   ├── FC-07-Testing primera parte.pdf
+│   ├── FC-08-Testing segunda parte.pdf
+│   ├── FC-09-Metricas.pdf
+│   └── FC-10-Kanban.pdf
 ├── 03 Trabajos evaluables
 │   └── Trabajos conceptuales
 │       └── TC-01-Integración continua.pdf
@@ -61,7 +61,6 @@ ISW-2019/
 │   │   ├── bootstrap-reboot.min.css
 │   │   └── bootstrap-reboot.min.css.map
 │   ├── img
-│   │   ├── comida.png
 │   │   ├── delivery.jpeg
 │   │   └── success-icon.png
 │   ├── index.html
@@ -76,6 +75,9 @@ ISW-2019/
 │   │   ├── bootstrap.js.map
 │   │   ├── bootstrap.min.js
 │   │   └── bootstrap.min.js.map
+│   ├── misCSS
+│   │   └── General.css
+│   ├── successful.html
 │   ├── misCSS
 │   │   └── General.css
 │   └── successful.html
