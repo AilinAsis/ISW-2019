@@ -1,6 +1,5 @@
 angular.module("app", [])
     .controller("appCtrl", ($scope) => {
-        $scope.caractRest = 180; // Cantidad de caracteres para describir el producto deseado.
         $scope.descripcion = "";
         $scope.calle1 = "";
         $scope.calleNro1 = "";
@@ -207,7 +206,7 @@ angular.module("app", [])
                 }
             }
 
-            // Validar donde llevarlo verificando que se ingreso la calle y el numero
+            // Validar donde llevarlo verificando que se ingreso la calle, numero y piso/depto
             if ($scope.calle2 === "" || $scope.calleNro2 === "") {
                 alert("Debe ingresar la direccion donde llevar el producto");
                 pasa = false;

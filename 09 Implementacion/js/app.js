@@ -206,7 +206,7 @@ angular.module("app", [])
                 }
             }
 
-            // Validar donde llevarlo verificando que se ingreso la calle y el numero
+            // Validar donde llevarlo verificando que se ingreso la calle, numero y piso/depto
             if ($scope.calle2 === "" || $scope.calleNro2 === "") {
                 alert("Debe ingresar la direccion donde llevar el producto");
                 pasa = false;
