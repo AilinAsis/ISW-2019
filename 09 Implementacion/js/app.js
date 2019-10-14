@@ -1,6 +1,5 @@
 angular.module("app", [])
     .controller("appCtrl", ($scope) => {
-        $scope.caractRest = 180; // Cantidad de caracteres para describir el producto deseado.
         $scope.descripcion = "";
         $scope.calle1 = "";
         $scope.calleNro1 = "";
