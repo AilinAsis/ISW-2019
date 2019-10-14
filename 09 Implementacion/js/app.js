@@ -61,7 +61,7 @@ angular.module("app", [])
             $scope.radioMapa = true;
         }
 
-        //Validador de fechas de vencimiento
+        //Validador de fechas de vencimiento (MM/AAAA)
 
         function validarFormatoFecha(campo) {
             var RegExPattern = /^\d{1,2}\/\d{2,4}$/;
@@ -69,14 +69,22 @@ angular.module("app", [])
                 var campos = campo.split("/")
                 var mes = campos[0];
                 var año = campos[1];
-                if ((mes > 0) && (mes < 13) && (año > 1994) && (año < 2041)) {
-
-                    return true;
+                var hoy = new Date();
+                if ((mes < 13) && (mes > 0) && (año < 2040) && (año > 0)) {
+                    if (año == hoy.getFullYear()) {
+                        if (mes > hoy.getMonth() + 1) {
+                            return true;
+                        }
+                    } else {
+                        if (año > hoy.getFullYear()) {
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    }
                 } else {
                     return false;
                 }
-            } else {
-                return false;
             }
         }
 
@@ -255,7 +263,7 @@ angular.module("app", [])
                 pasa = false;
             }
 
-            // Validar Fecha de envio
+            // Validar Fecha de envio segun el formato (DD/MM/AAAA)
             if (isCheckedSelectFecha) {
                 var hoy = new Date();
                 var valueTextFecha = document.getElementById("textFecha").value;
