@@ -40,7 +40,8 @@ ISW-2019/
 │   └── GT-Lineamientos para trabajos teóricos.pdf
 ├── 06 Material de Clase
 │   ├── MC-01-Cartas de Poker Estimations-Practico.pdf
-│   └── MC-02-Dinamicas de Scrum-Practico.pdf
+│   ├── MC-02-Dinamicas de Scrum-Practico.pdf
+│   └── MC-03-Buenas Practicas de Java Script-Practico.pdf
 ├── 07 Notas
 │   └── NC-20190830-Gestión de Configuración-Teorica.docx
 ├── 08 Resúmenes
@@ -75,9 +76,6 @@ ISW-2019/
 │   │   ├── bootstrap.js.map
 │   │   ├── bootstrap.min.js
 │   │   └── bootstrap.min.js.map
-│   ├── misCSS
-│   │   └── General.css
-│   ├── successful.html
 │   ├── misCSS
 │   │   └── General.css
 │   └── successful.html
