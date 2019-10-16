@@ -88,7 +88,7 @@ ISW-2019/
 | ------------------------------ | ------------------------------------------------------------|-----------------------------------------------|
 | Líneas Base                    | LB-\<nro\>-\<nombreLB\>.\<extensión\>                       | /01 Líneas Base                               |
 | Documentos de Línea Base       | DOC-\<idLíneaBase\>-\<nro\>-\<ambito\>.\<extensión\>        | /01 Líneas Base/LB-\<nro\>-\<nombreLB\>       || Filminas de clases             | FC-\<nro\>-\<tema\>.pdf                                     | /02 Filminas                                  |
-| Trabajos prácticos             | TP-\<nro\>-\<tema\>.pdf                                     | /03 Trabajos evaluables/Trabajos prácticos    |
+| Trabajos prácticos             | TP-\<nro\>-\<tema\>.xlsx                                    | /03 Trabajos evaluables/Trabajos prácticos    |
 | Trabajos conceptuales          | TC-\<nro\>-\<tema\>.pdf                                     | /03 Trabajos evaluables/Trabajos conceptuales |
 | Modalidad académica            | MOD-ACAD-ISW\<YYYY\>.pdf                                    | /04 Documentos de la cátedra                  |
 | Guías de trabajo               | GT-\<nombreGT\>.pdf                                         | /05 Guías de trabajos                         |
