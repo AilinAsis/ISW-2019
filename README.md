@@ -5,18 +5,34 @@
 ```
 ISW-2019/
 ├── 01 Líneas Base
-│   └── LB-01-Primera parte de la materia
-│       ├── DOC-LB01-01-Filminas-Introducción a Cursada.pdf
-│       ├── DOC-LB01-02-Filminas-Ing de Software.pdf
-│       ├── DOC-LB01-03-Filminas-Componentes de Proy de Software.pdf
-│       ├── DOC-LB01-04-Filminas-Lean Agile.pdf
-│       ├── DOC-LB01-05-Filminas-User Stories.pdf
-│       ├── DOC-LB01-06-Filminas-SCM.pdf
-│       ├── DOC-LB01-07-Documentos de la cátedra-Bibliografía 2019.pdf
-│       ├── DOC-LB01-08-Documentos de la cátedra-Modalidad Académica 2019.pdf
-│       ├── DOC-LB01-09-Guías de Trabajo-Ejercicios Resueltos.pdf
-│       ├── DOC-LB01-10-Guías de Trabajo-Enunciados De Trabajos Prácticos evaluables.pdf
-│       └── DOC-LB01-11-Guías de Trabajo-Lineamientos para trabajos teóricos.pdf
+│   ├── LB-01-Primera parte de la materia
+│   │   ├── DOC-LB01-01-Filminas-Introducción a Cursada.pdf
+│   │   ├── DOC-LB01-02-Filminas-Ing de Software.pdf
+│   │   ├── DOC-LB01-03-Filminas-Componentes de Proy de Software.pdf
+│   │   ├── DOC-LB01-04-Filminas-Lean Agile.pdf
+│   │   ├── DOC-LB01-05-Filminas-User Stories.pdf
+│   │   ├── DOC-LB01-06-Filminas-SCM.pdf
+│   │   ├── DOC-LB01-07-Documentos de la cátedra-Bibliografía 2019.pdf
+│   │   ├── DOC-LB01-08-Documentos de la cátedra-Modalidad Académica 2019.pdf
+│   │   ├── DOC-LB01-09-Guías de Trabajo-Ejercicios Resueltos.pdf
+│   │   ├── DOC-LB01-10-Guías de Trabajo-Enunciados De Trabajos Prácticos evaluables.pdf
+│   │   └── DOC-LB01-11-Guías de Trabajo-Lineamientos para trabajos teóricos.pdf
+│   └── LB-02-Segunda parte de la materia
+│       ├── DOC-LB02-01-Filminas-Introducción a Cursada.pdf
+│       ├── DOC-LB02-02-Filminas-Ing de Software.pdf
+│       ├── DOC-LB02-03-Filminas-Componentes de Proy de Software.pdf
+│       ├── DOC-LB02-04-Filminas-Lean Agile.pdf
+│       ├── DOC-LB02-05-Filminas-User Stories.pdf
+│       ├── DOC-LB02-06-Filminas-SCM.pdf
+│       ├── DOC-LB02-07-Filminas-Testing primera parte.pdf
+│       ├── DOC-LB02-08-Filminas-Testing segunda parte.pdf
+│       ├── DOC-LB02-09-Filminas-Metricas.pdf
+│       ├── DOC-LB02-10-Filminas-Kanban.pdf
+│       ├── DOC-LB02-11-Documentos de la cátedra-Bibliografía 2019.pdf
+│       ├── DOC-LB02-12-Documentos de la cátedra-Modalidad Académica 2019.pdf
+│       ├── DOC-LB02-13-Guías de Trabajo-Ejercicios Resueltos.pdf
+│       ├── DOC-LB02-14-Guías de Trabajo-Enunciados De Trabajos Prácticos evaluables.pdf
+│       └── DOC-LB02-15-Guías de Trabajo-Lineamientos para trabajos teóricos.pdf
 ├── 02 Filminas
 │   ├── FC-01-Introducción a Cursada.pdf
 │   ├── FC-02-Ing de Software.pdf
@@ -29,8 +45,10 @@ ISW-2019/
 │   ├── FC-09-Metricas.pdf
 │   └── FC-10-Kanban.pdf
 ├── 03 Trabajos evaluables
-│   └── Trabajos conceptuales
-│       └── TC-01-Integración continua.pdf
+│   ├── Trabajos conceptuales
+│   │   └── TC-01-Integración continua.pdf
+│   └── Trabajos prácticos
+│       └── TP-13-Testing_Ejecucion_de_Casos_de_Prueba.xlsx
 ├── 04 Documentos de la cátedra
 │   ├── Bibliografía-2019.pdf
 │   └── MOD-ACAD-ISW-2019.pdf
